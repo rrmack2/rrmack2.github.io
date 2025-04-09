@@ -1,8 +1,8 @@
 ---
-name: Facebook Ego Network Analysis
+name: Building Inventory Analysis
 tools: [Python, Altair, Vega-Lite]
-image: assets/pngs/facebook_network.png
-description: An interactive data visualization project exploring Facebook friendships using Altair and Vega-Lite.
+image: assets/pngs/buildings_chart.png  # <- if you have a screenshot
+description: A data visualization project using building inventory data from the University of Illinois system.
 custom_js:
   - vega.min
   - vega-lite.min
@@ -10,34 +10,24 @@ custom_js:
   - justcharts
 ---
 
-# Facebook Ego Network Analysis
+# Building Inventory Visualization
 
-This project visualizes the **ego-Facebook dataset**, which includes anonymized friendship connections. Using Python, NetworkX, Pandas, and Altair (with Vega-Lite), I created two visualizations to better understand the structure and reach of users within the network.
+This project uses building inventory data from Illinois state facilities to explore patterns in construction over time and building usage by agency.
 
----
+## 📊 Visualization 1: Number of Buildings Constructed Per Decade
 
-## Visualization 1: Facebook Ego Network Layout
+This bar chart shows the number of buildings constructed per decade, based on the “Year Constructed” column. I grouped the data by decade and visualized total building counts per decade using a clean, vertical bar chart. The chart helps show when periods of growth occurred. I used decade bins to reduce clutter and keep the axis readable.
 
-This chart shows a force-directed layout of the Facebook ego network. Each node represents a user, and each edge is a friendship connection. The layout was created with NetworkX’s spring layout algorithm, and nodes are colored by their degree (number of friends), using the viridis color scale. This allows us to see which users are more central or well-connected in the network.
+## 🖱️ Visualization 2: Interactive – Average Square Footage by Usage Type
 
----
+This interactive chart displays the average square footage for each usage category (e.g., “Office,” “Storage,” etc.), filtered by agency. Users can select an agency from a dropdown to see how space is allocated by use type. I used a bar chart to make size comparisons clear, and interactivity makes the visualization more personal and relevant for specific units.
 
-## Visualization 2: Interactive Degree Histogram
+## 🔗 Explore the Data & Notebook
 
-This interactive histogram visualizes how many friends each user has. Users can click and drag to select a range of degrees, which filters the bars in real time. This interactivity allows us to explore the distribution more clearly and discover outliers or highly connected individuals.
-
----
-
-## Explore the Data & Code
-
-Below are links to the dataset and the Python notebook used to generate these visualizations:
-
-```
 <div class="left">
-{% include elements/button.html link="https://snap.stanford.edu/data/facebook_combined.txt" text="The Data" %}
+{% include elements/button.html link="https://raw.githubusercontent.com/rrmack2/rrmack2.github.io/main/building_inventory.csv" text="The Data" %}
 </div>
 
 <div class="right">
-{% include elements/button.html link="https://github.com/rrmack2/rrmack2.github.io/blob/main/facebook_analysis.ipynb" text="The Analysis" %}
+{% include elements/button.html link="https://github.com/rrmack2/rrmack2.github.io/blob/main/building_inventory_analysis.ipynb" text="The Analysis" %}
 </div>
-```
