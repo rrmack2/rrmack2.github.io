@@ -18,9 +18,13 @@ This project uses building inventory data from Illinois state facilities to expl
 
 This bar chart shows the number of buildings constructed per decade, based on the “Year Constructed” column. I grouped the data by decade and visualized total building counts per decade using a clean, vertical bar chart. The chart helps show when periods of growth occurred. I used decade bins to reduce clutter and keep the axis readable.
 
+<vegachart schema-url="{{ site.baseurl }}/assets/json/buildingsdecade.json" style="width: 100%"></vegachart>
+
 ## Visualization 2: Interactive – Average Square Footage by Usage Type
 
 This interactive chart displays the average square footage for each usage category (e.g., “Office,” “Storage,” etc.), filtered by agency. Users can select an agency from a dropdown to see how space is allocated by use type. I used a bar chart to make size comparisons clear, and interactivity makes the visualization more personal and relevant for specific units.
+
+<vegachart schema-url="{{ site.baseurl }}/assets/json/usage_chart.json" style="width: 100%"></vegachart>
 
 ## Explore the Data & Notebook
 
