@@ -24,7 +24,7 @@ This bar chart shows the number of buildings constructed per decade, based on th
 
 This interactive chart displays the average square footage for each usage category (e.g., “Office,” “Storage,” etc.), filtered by agency. Users can select an agency from a dropdown to see how space is allocated by use type. I used a bar chart to make size comparisons clear, and interactivity makes the visualization more personal and relevant for specific units.
 
-<vegachart schema-url="{{ site.baseurl }}/assets/json/usage_chart.json" style="width: 100%"></vegachart>
+<vegachart schema-url="{{ site.baseurl }}/assets/json/usagechart.json" style="width: 100%"></vegachart>
 
 ## Explore the Data & Notebook
 
