@@ -25,7 +25,7 @@ This interactive chart displays the average square footage for each usage catego
 ## Explore the Data & Notebook
 
 <div class="left">
-{% include elements/button.html link="https://raw.githubusercontent.com/rrmack2/rrmack2.github.io/main/building_inventory.csv" text="The Data" %}
+{% include elements/button.html link="https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/main/building_inventory.csv" text="The Data" %}
 </div>
 
 <div class="right">
