@@ -1,0 +1,108 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Monthly Rent by State Over Time",
+  "width": 800,
+  "height": 500,
+  "data": {
+    "url": "assets/data/rent_by_state_long.csv"
+  },
+  "datasets": {
+    "state_fips": [
+      {"State": "Alabama", "id": 1},
+      {"State": "Alaska", "id": 2},
+      {"State": "Arizona", "id": 4},
+      {"State": "Arkansas", "id": 5},
+      {"State": "California", "id": 6},
+      {"State": "Colorado", "id": 8},
+      {"State": "Connecticut", "id": 9},
+      {"State": "Delaware", "id": 10},
+      {"State": "Florida", "id": 12},
+      {"State": "Georgia", "id": 13},
+      {"State": "Hawaii", "id": 15},
+      {"State": "Idaho", "id": 16},
+      {"State": "Illinois", "id": 17},
+      {"State": "Indiana", "id": 18},
+      {"State": "Iowa", "id": 19},
+      {"State": "Kansas", "id": 20},
+      {"State": "Kentucky", "id": 21},
+      {"State": "Louisiana", "id": 22},
+      {"State": "Maine", "id": 23},
+      {"State": "Maryland", "id": 24},
+      {"State": "Massachusetts", "id": 25},
+      {"State": "Michigan", "id": 26},
+      {"State": "Minnesota", "id": 27},
+      {"State": "Mississippi", "id": 28},
+      {"State": "Missouri", "id": 29},
+      {"State": "Montana", "id": 30},
+      {"State": "Nebraska", "id": 31},
+      {"State": "Nevada", "id": 32},
+      {"State": "New Hampshire", "id": 33},
+      {"State": "New Jersey", "id": 34},
+      {"State": "New Mexico", "id": 35},
+      {"State": "New York", "id": 36},
+      {"State": "North Carolina", "id": 37},
+      {"State": "North Dakota", "id": 38},
+      {"State": "Ohio", "id": 39},
+      {"State": "Oklahoma", "id": 40},
+      {"State": "Oregon", "id": 41},
+      {"State": "Pennsylvania", "id": 42},
+      {"State": "Rhode Island", "id": 44},
+      {"State": "South Carolina", "id": 45},
+      {"State": "South Dakota", "id": 46},
+      {"State": "Tennessee", "id": 47},
+      {"State": "Texas", "id": 48},
+      {"State": "Utah", "id": 49},
+      {"State": "Vermont", "id": 50},
+      {"State": "Virginia", "id": 51},
+      {"State": "Washington", "id": 53},
+      {"State": "West Virginia", "id": 54},
+      {"State": "Wisconsin", "id": 55},
+      {"State": "Wyoming", "id": 56}
+    ]
+  },
+  "transform": [
+    {
+      "lookup": "State",
+      "from": {
+        "data": {
+          "name": "state_fips"
+        },
+        "key": "State",
+        "fields": ["id"]
+      }
+    },
+    {
+      "lookup": "id",
+      "from": {
+        "data": {
+          "url": "https://vega.github.io/vega-datasets/data/us-10m.json",
+          "format": {
+            "type": "topojson",
+            "feature": "states"
+          }
+        },
+        "key": "id",
+        "fields": ["geometry"]
+      }
+    }
+  ],
+  "projection": {
+    "type": "albersUsa"
+  },
+  "mark": {
+    "type": "geoshape"
+  },
+  "encoding": {
+    "color": {
+      "field": "Rent",
+      "type": "quantitative",
+      "title": "Average Rent",
+      "scale": { "scheme": "blues" }
+    },
+    "tooltip": [
+      { "field": "State", "type": "nominal" },
+      { "field": "Rent", "type": "quantitative" },
+      { "field": "YearMonth", "type": "temporal" }
+    ]
+  }
+}
